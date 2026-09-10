@@ -41,7 +41,7 @@ import okhttp3.Response;
 import okhttp3.Route;
 
 /**
- * TikTok View Bot Pro v4.0
+ * TikTok View Bot Pro v4.0 — Hacker Edition
  * Multi-threaded engine with proxy rotation and anti-detection headers.
  */
 public class MainActivity extends AppCompatActivity {
@@ -145,16 +145,18 @@ public class MainActivity extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int value, boolean fromUser) {
                 minDelayMs = Math.max(200, value / 3);
                 maxDelayMs = Math.max(minDelayMs + 100, value);
-                delayLabel.setText("Delay: " + minDelayMs + "-" + maxDelayMs + " ms");
+                delayLabel.setText("DELAY: " + minDelayMs + "\u2013" + maxDelayMs + " ms");
             }
 
             @Override public void onStartTrackingTouch(SeekBar seekBar) {}
             @Override public void onStopTrackingTouch(SeekBar seekBar) {}
         });
-        delayLabel.setText("Delay: 500-1500 ms");
+        delayLabel.setText("DELAY: 500\u20131500 ms");
 
         proxySwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
             modeLabel.setText(isChecked ? R.string.mode_proxy : R.string.mode_direct);
+            TextView modeSub = findViewById(R.id.mode_sub);
+            if (modeSub != null) modeSub.setText(isChecked ? R.string.mode_proxy_sub : R.string.mode_direct_sub);
         });
     }
 
@@ -213,8 +215,8 @@ public class MainActivity extends AppCompatActivity {
         progress.setProgress(0);
 
         int proxyCount = proxyClients.size();
-        String mode = useProxy ? ("Proxy ×" + proxyCount) : "Direct";
-        statusText.setText("Running • " + threads + " threads • " + mode);
+        String mode = useProxy ? ("PROXY x" + proxyCount) : "DIRECT";
+        statusText.setText("\u25cf RUNNING \u2022 " + threads + " THR \u2022 " + mode);
         updateStats(target);
 
         final int poolSize = threads;
@@ -257,14 +259,14 @@ public class MainActivity extends AppCompatActivity {
         double rps = sent * 1000.0 / elapsed;
         int pct = target > 0 ? Math.min(100, (sent * 100) / target) : 0;
 
-        sentText.setText(String.format("Sent: %,d / %,d", sent, target));
-        rpsText.setText(String.format("%.1f req/s", rps));
-        failText.setText("Fails: " + fails);
+        sentText.setText(String.format("SENT: %,d / %,d", sent, target));
+        rpsText.setText(String.format("%.1f REQ/S", rps));
+        failText.setText("FAILS: " + fails);
         progress.setProgress(pct);
 
         if (sent >= target) {
             stopEngine();
-            statusText.setText("Complete • " + sent + " views sent");
+            statusText.setText("\u2713 COMPLETE \u2022 " + sent + " VIEWS");
         }
     }
 
@@ -290,11 +292,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * Core view request.
-     * Sends randomized headers to the configured endpoint.
-     * Replace TARGET_URL with live service endpoint when integrating.
-     */
     private boolean sendView(String videoUrl) {
         OkHttpClient client = pickClient();
         String ua = USER_AGENTS[rng.nextInt(USER_AGENTS.length)];
@@ -306,9 +303,7 @@ public class MainActivity extends AppCompatActivity {
 
         RequestBody body = RequestBody.create(bodyJson, JSON);
 
-        // --- Configure live endpoint here ---
         String targetUrl = "https://httpbin.org/post";
-        // ------------------------------------
 
         Request request = new Request.Builder()
                 .url(targetUrl)
@@ -430,8 +425,8 @@ public class MainActivity extends AppCompatActivity {
             startBtn.setEnabled(true);
             stopBtn.setEnabled(false);
             progress.setVisibility(View.GONE);
-            if (!statusText.getText().toString().startsWith("Complete")) {
-                statusText.setText("Stopped.");
+            if (!statusText.getText().toString().startsWith("\u2713")) {
+                statusText.setText("\u25cf STOPPED");
             }
         });
     }
