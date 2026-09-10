@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">TikTok View Bot Pro</string>
+    <string name="app_header">⚡ TIKTOK VIEW BOT PRO</string>
+    <string name="app_tagline">Elite Hacker Edition • Multi-thread • Proxy • Anti-detect</string>
+    <string name="label_url">TARGET VIDEO URL</string>
     <string name="hint_url">https://www.tiktok.com/@user/video/...</string>
-    <string name="label_url">VIDEO URL</string>
+    <string name="btn_paste">PASTE</string>
+    <string name="btn_validate">VALIDATE</string>
     <string name="label_count">TARGET VIEWS</string>
     <string name="label_threads">THREADS</string>
     <string name="label_delay">DELAY RANGE</string>
-    <string name="label_proxy">PROXIES (optional)</string>
+    <string name="label_mode">CONNECTION MODE</string>
+    <string name="mode_direct">DIRECT</string>
+    <string name="mode_direct_sub">~100–150/min • medium risk</string>
+    <string name="mode_proxy">PROXY</string>
+    <string name="mode_proxy_sub">~40–60/min • low risk</string>
+    <string name="label_proxy">PROXY ROTATION</string>
     <string name="hint_proxy">host:port\nuser:pass@host:port\none per line</string>
-    <string name="btn_start">START ENGINE</string>
-    <string name="btn_stop">STOP</string>
-    <string name="status_ready">Ready.</string>
-    <string name="mode_direct">Direct Mode</string>
-    <string name="mode_proxy">Proxy Mode</string>
+    <string name="btn_add_proxy">ADD PROXY</string>
+    <string name="label_metrics">REAL-TIME METRICS</string>
+    <string name="status_ready">● READY</string>
+    <string name="status_init">● INITIALIZING…</string>
+    <string name="status_running">● RUNNING…</string>
+    <string name="status_complete">✓ COMPLETE</string>
+    <string name="status_stopped">● STOPPED</string>
+    <string name="btn_start">▶ START EXECUTION</string>
+    <string name="btn_stop">⏹ STOP</string>
+    <string name="footer">v4.0-pro • HACKER EDITION • MIT • OPEN SOURCE</string>
 </resources>

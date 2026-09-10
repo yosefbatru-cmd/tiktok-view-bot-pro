@@ -2,12 +2,17 @@
 <resources>
     <style name="Theme.TikTokBot" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/accent</item>
-        <item name="colorPrimaryVariant">@color/accent_dark</item>
-        <item name="colorOnPrimary">@color/text_primary</item>
-        <item name="colorSecondary">@color/accent</item>
+        <item name="colorPrimaryVariant">@color/accent_dim</item>
+        <item name="colorOnPrimary">@color/bg_primary</item>
+        <item name="colorSecondary">@color/neon_green</item>
+        <item name="colorOnSecondary">@color/bg_primary</item>
+        <item name="colorError">@color/hot_pink</item>
         <item name="android:statusBarColor">@color/bg_primary</item>
         <item name="android:navigationBarColor">@color/bg_primary</item>
         <item name="android:windowBackground">@color/bg_primary</item>
         <item name="android:colorBackground">@color/bg_primary</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:fontFamily">monospace</item>
     </style>
 </resources>
