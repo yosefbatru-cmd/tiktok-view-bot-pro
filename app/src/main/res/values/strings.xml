@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TikTok View Bot Pro</string>
+    <string name="hint_url">https://www.tiktok.com/@user/video/...</string>
+    <string name="label_url">VIDEO URL</string>
+    <string name="label_count">TARGET VIEWS</string>
+    <string name="label_threads">THREADS</string>
+    <string name="label_delay">DELAY RANGE</string>
+    <string name="label_proxy">PROXIES (optional)</string>
+    <string name="hint_proxy">host:port\nuser:pass@host:port\none per line</string>
+    <string name="btn_start">START ENGINE</string>
+    <string name="btn_stop">STOP</string>
+    <string name="status_ready">Ready.</string>
+    <string name="mode_direct">Direct Mode</string>
+    <string name="mode_proxy">Proxy Mode</string>
+</resources>
